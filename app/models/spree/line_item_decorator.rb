@@ -25,7 +25,7 @@ module Spree
 
     def create_digital_links_for_variant(variant)
       variant.digitals.each do |digital|
-        self.quantity.times do
+        self.quantity.to_i.times do
           digital_links.create!(:digital => digital)
         end
       end
